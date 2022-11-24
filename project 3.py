@@ -1,5 +1,4 @@
-import plotly
-import plotly.graph_objs as go
+import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import mpld3
@@ -119,8 +118,4 @@ plt.minorticks_on()
 plt.legend(loc = 'lower right', shadow = True)
 plt.tick_params(axis = 'both', labelsize = 8)
 
-
-html_str = mpld3.fig_to_html(fig)
-Html_file= open("data1.html","w")
-Html_file.write(html_str)
-Html_file.close()
+st.pyplot(fig)
