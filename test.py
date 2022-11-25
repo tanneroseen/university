@@ -42,25 +42,33 @@ fig.add_trace(go.Scatter(
 ))
 '''
 
-fig.add_trace(go.Scatter(
-    x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
-    y=avg_precip),
-    row=1,
-    col=1
+option = st.multiselect(
+    'What graphs would you like to display?',
+    ['Precipitation', 'Average Temp', 'Min Temp']
 )
 
-fig.add_trace(go.Scatter(
-    x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
-    y=avg_temp),
-    row=1,
-    col=2
-)
+if 'Precipitation' in option:
+    fig.add_trace(go.Scatter(
+        x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
+        y=avg_precip),
+        row=1,
+        col=1
+    )
 
-fig.add_trace(go.Scatter(
-    x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
-    y=min_temp),
-    row=2,
-    col=1
-)
+if 'Average Temp' in option:   
+    fig.add_trace(go.Scatter(
+        x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
+        y=avg_temp),
+        row=1,
+        col=2
+    )
+
+if 'Min Temp' in option:
+    fig.add_trace(go.Scatter(
+        x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
+        y=min_temp),
+        row=2,
+        col=1
+    )
 
 st.plotly_chart(fig)
