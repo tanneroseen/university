@@ -42,6 +42,11 @@ fig.add_trace(go.Scatter(
 ))
 '''
 
+option = st.multiselect(
+    'What graphs would you like to display?',
+    ['Precipitation', 'Average Temp', 'Min Temp']
+)
+
 fig.add_trace(go.Scatter(
     x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
     y=avg_precip),
