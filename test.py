@@ -44,7 +44,8 @@ fig.add_trace(go.Scatter(
 
 option = st.multiselect(
     'What graphs would you like to display?',
-    ['Precipitation', 'Average Temp', 'Min Temp']
+    ['Precipitation', 'Average Temp', 'Min Temp'],
+    []
 )
 
 if 'Precipitation' in option:
