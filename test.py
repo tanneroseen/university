@@ -18,29 +18,16 @@ avg_precip = jasper_data.groupby(pd.Grouper(key= 'Date (Local Standard Time)', f
 avg_temp = jasper_data.groupby(pd.Grouper(key= 'Date (Local Standard Time)', freq='M'))['Air Temp. Avg. (C)'].mean() #Does the avg monthly air temp from the daily averages
 min_temp = min_grouped_by_week = jasper_data.groupby(pd.Grouper(key = 'Date (Local Standard Time)', freq = 'M'))['Air Temp. Min. (C)'].min()
 
-colour_temp = avg_temp*10
 
-fig = make_subplots(
-    rows=2, cols=2,
-    specs=[[{}, {}],
-           [{"colspan": 2}, None]],
-    subplot_titles=("First Subplot","Second Subplot", "Third Subplot"))
+#col1, col2 = st.columns(2)
 
-'''
-fig.add_trace(go.Scatter(
-    x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
-    y=avg_temp,
-    #row=1,
-    #col=1,
-    mode='markers',
-    marker=dict(
-    color=colour_temp,
-    color_continuous_scale=px.colors.sequential.Viridis,
-    size=avg_precip,
-    showscale=True
-    )
-))
-'''
+#fig = make_subplots(
+#    rows=2, cols=2,
+#    specs=[[{}, {}],
+#           [{"colspan": 2}, None]],
+#    subplot_titles=("First Subplot","Second Subplot", "Third Subplot"))
+
+fig = go.Figure()
 
 option = st.multiselect(
     'What graphs would you like to display?',
@@ -50,26 +37,18 @@ option = st.multiselect(
 
 if 'Precipitation' in option:
     fig.add_trace(go.Scatter(
-        x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
-        y=avg_precip),
-        row=1,
-        col=1
-    )
-
-if 'Average Temp' in option:   
-    fig.add_trace(go.Scatter(
-        x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
-        y=avg_temp),
-        row=1,
-        col=2
-    )
-
-if 'Min Temp' in option:
-    fig.add_trace(go.Scatter(
-        x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
-        y=min_temp),
-        row=2,
-        col=1
-    )
+        x = pd.date_range("2019-10-03", "2022-11-03", freq='M'),
+        y = avg_temp,
+        mode='markers',
+        marker=dict(
+            color=avg_temp,
+            colorscale="Viridis",
+            size=avg_precip,
+            colorbar = dict(
+                title="Type"
+            ),
+        ),
+        showlegend=True
+    ))
 
 st.plotly_chart(fig)
