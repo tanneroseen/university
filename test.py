@@ -35,20 +35,20 @@ option = st.multiselect(
     []
 )
 
-with col1:
-    if 'Precipitation' in option:
-        fig.add_trace(go.Scatter(
-            x = pd.date_range("2019-10-03", "2022-11-03", freq='M'),
-            y = avg_temp,
-            mode='markers',
-            marker=dict(
-                color=avg_temp,
-                colorscale="Viridis",
-                size=avg_precip,
-                colorbar = dict(
-                    title="Type"
-                ),
+
+if 'Precipitation' in option:
+    fig.add_trace(go.Scatter(
+        x = pd.date_range("2019-10-03", "2022-11-03", freq='M'),
+        y = avg_temp,
+        mode='markers',
+        marker=dict(
+            color=avg_temp,
+            colorscale="Viridis",
+            size=avg_precip,
+            colorbar = dict(
+                title="Type"
             ),
-        ))
+        ),
+    ))
 
     st.plotly_chart(fig)
