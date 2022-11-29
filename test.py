@@ -24,7 +24,6 @@ fancy_page_stuff = """
     background-color: #d692fc
 }
 </style>
-
 """
 
 st.markdown(fancy_page_stuff, unsafe_allow_html=True)
@@ -53,6 +52,13 @@ if 'Precipitation' in option:
             ),
         ),
     ))
+
+    fig1.update_layout(
+        title = "Precipitation",
+        xaxis_title = 'Date',
+        yaxis_title = 'Temperature',
+        legend_title = 'Size'
+    )
 
     st.plotly_chart(fig1)
 
