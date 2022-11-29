@@ -27,7 +27,6 @@ col1, col2 = st.columns(2)
 #           [{"colspan": 2}, None]],
 #    subplot_titles=("First Subplot","Second Subplot", "Third Subplot"))
 
-fig = go.Figure()
 
 option = st.multiselect(
     'What graphs would you like to display?',
@@ -35,9 +34,13 @@ option = st.multiselect(
     []
 )
 
+fig1 = go.Figure()
+fig2 = go.Figure()
+fig3 = go.Figure()
+
 
 if 'Precipitation' in option:
-    fig.add_trace(go.Scatter(
+    fig1.add_trace(go.Scatter(
         x = pd.date_range("2019-10-03", "2022-11-03", freq='M'),
         y = avg_temp,
         mode='markers',
@@ -51,4 +54,25 @@ if 'Precipitation' in option:
         ),
     ))
 
-    st.plotly_chart(fig)
+    st.plotly_chart(fig1)
+
+
+if 'Average Temp' in option:   
+    fig2.add_trace(go.Scatter(
+        x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
+        y=avg_temp),
+        #row=1,
+        #col=2
+    )
+
+    st.plotly_chart(fig2)
+
+if 'Min Temp' in option:
+    fig3.add_trace(go.Scatter(
+        x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
+        y=min_temp),
+        #row=2,
+        #col=1
+    )
+
+    st.plotly_chart(fig3)
