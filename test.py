@@ -18,15 +18,16 @@ avg_precip = jasper_data.groupby(pd.Grouper(key= 'Date (Local Standard Time)', f
 avg_temp = jasper_data.groupby(pd.Grouper(key= 'Date (Local Standard Time)', freq='M'))['Air Temp. Avg. (C)'].mean() #Does the avg monthly air temp from the daily averages
 min_temp = min_grouped_by_week = jasper_data.groupby(pd.Grouper(key = 'Date (Local Standard Time)', freq = 'M'))['Air Temp. Min. (C)'].min()
 
+fancy_page_stuff = """
+<style>
+[data-testid="stAppViewContainer"] {
+    background-color: coral
+}
+</style>
 
-col1, col2 = st.columns(2)
+"""
 
-#fig = make_subplots(
-#    rows=2, cols=2,
-#    specs=[[{}, {}],
-#           [{"colspan": 2}, None]],
-#    subplot_titles=("First Subplot","Second Subplot", "Third Subplot"))
-
+st.markdown(fancy_page_stuff, unsafe_allow_html=True)
 
 option = st.multiselect(
     'What graphs would you like to display?',
@@ -37,7 +38,6 @@ option = st.multiselect(
 fig1 = go.Figure()
 fig2 = go.Figure()
 fig3 = go.Figure()
-
 
 if 'Precipitation' in option:
     fig1.add_trace(go.Scatter(
@@ -56,13 +56,10 @@ if 'Precipitation' in option:
 
     st.plotly_chart(fig1)
 
-
 if 'Average Temp' in option:   
     fig2.add_trace(go.Scatter(
         x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
         y=avg_temp),
-        #row=1,
-        #col=2
     )
 
     st.plotly_chart(fig2)
@@ -71,8 +68,6 @@ if 'Min Temp' in option:
     fig3.add_trace(go.Scatter(
         x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
         y=min_temp),
-        #row=2,
-        #col=1
     )
 
     st.plotly_chart(fig3)
