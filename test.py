@@ -19,7 +19,7 @@ avg_temp = jasper_data.groupby(pd.Grouper(key= 'Date (Local Standard Time)', fre
 min_temp = min_grouped_by_week = jasper_data.groupby(pd.Grouper(key = 'Date (Local Standard Time)', freq = 'M'))['Air Temp. Min. (C)'].min()
 
 
-#col1, col2 = st.columns(2)
+col1, col2 = st.columns(2)
 
 #fig = make_subplots(
 #    rows=2, cols=2,
@@ -35,19 +35,20 @@ option = st.multiselect(
     []
 )
 
-if 'Precipitation' in option:
-    fig.add_trace(go.Scatter(
-        x = pd.date_range("2019-10-03", "2022-11-03", freq='M'),
-        y = avg_temp,
-        mode='markers',
-        marker=dict(
-            color=avg_temp,
-            colorscale="Viridis",
-            size=avg_precip,
-            colorbar = dict(
-                title="Type"
+with col1:
+    if 'Precipitation' in option:
+        fig.add_trace(go.Scatter(
+            x = pd.date_range("2019-10-03", "2022-11-03", freq='M'),
+            y = avg_temp,
+            mode='markers',
+            marker=dict(
+                color=avg_temp,
+                colorscale="Viridis",
+                size=avg_precip,
+                colorbar = dict(
+                    title="Type"
+                ),
             ),
-        ),
-    ))
+        ))
 
-st.plotly_chart(fig)
+    st.plotly_chart(fig)
