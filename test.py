@@ -21,7 +21,7 @@ min_temp = min_grouped_by_week = jasper_data.groupby(pd.Grouper(key = 'Date (Loc
 fancy_page_stuff = """
 <style>
 [data-testid="stAppViewContainer"] {
-    background-color: coral
+    background-color: #face0c
 }
 </style>
 
