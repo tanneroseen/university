@@ -48,7 +48,6 @@ if 'Precipitation' in option:
                 title="Type"
             ),
         ),
-        showlegend=True
     ))
 
 st.plotly_chart(fig)
