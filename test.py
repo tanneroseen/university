@@ -39,8 +39,9 @@ current_time = start_time = dt.strftime(dt.now(),'%X')
 current_date = date.today().strftime("%B %d, %Y")
 
 st.write(
-    'The current date and time is:',
-    current_time,
+    'The current date and time is: ',
+    current_date,
+    ' at ',
     current_date
 )
 
