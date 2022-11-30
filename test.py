@@ -6,7 +6,7 @@ from datetime import date
 
 st.set_page_config(
     page_title = 'Project 3',
-    favicon = ':shark:'
+    page_icon = ':shark:'
 )
 
 
