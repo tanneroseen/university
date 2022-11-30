@@ -5,7 +5,7 @@ from datetime import datetime as dt
 from datetime import date
 
 st.set_page_config(
-    title = 'Project 3'
+    page_title = 'Project 3'
 )
 
 
