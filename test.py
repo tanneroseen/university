@@ -24,6 +24,10 @@ fancy_page_stuff = """
     background-color: #d692fc
 }
 
+[data-testid="stHeader"] {
+    background-color: #d692fc
+}
+
 [data-testid="stVerticalBlock"] {
     background-color: #000000
 }
