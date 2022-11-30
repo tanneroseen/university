@@ -76,8 +76,10 @@ if 'Precipitation' in option:
         title = "Precipitation",
         xaxis_title = 'Date',
         yaxis_title = 'Temperature',
-        paper_bgcolor = '#d692fc'
+        paper_bgcolor = '#d692fc',
+        legend= {'itemsizing': 'constant'}
     )
+
 
     st.plotly_chart(fig1)
 
