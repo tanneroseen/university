@@ -77,6 +77,7 @@ if 'Precipitation' in option:
         xaxis_title = 'Date',
         yaxis_title = 'Temperature',
         paper_bgcolor = '#d692fc',
+        showlegend = True,
         legend= {'itemsizing': 'constant'}
     )
 
