@@ -2,6 +2,7 @@ import plotly.graph_objects as go
 import pandas as pd
 import streamlit as st
 from datetime import datetime as dt
+from datetime import date
 
 jasper_data = pd.read_csv('Jasper_Daily_Weather_Data.csv', encoding= 'unicode_escape')  #Importing the daily data
 jasper_data['Date (Local Standard Time)'] = pd.to_datetime(jasper_data['Date (Local Standard Time)']) #Converting tbe 'Date (Local Standard Time)' row to Date time data type for easy use to bundle by week, month etc
@@ -35,10 +36,12 @@ fancy_page_stuff = """
 st.markdown(fancy_page_stuff, unsafe_allow_html=True)
 
 current_time = start_time = dt.strftime(dt.now(),'%X') 
+current_date = date.today().strftime("%B %d, %Y")
 
 st.write(
     'The current date and time is:',
-    current_time
+    current_time,
+    current_date
 )
 
 option = st.multiselect(
