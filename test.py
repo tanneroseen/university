@@ -33,6 +33,11 @@ fancy_page_stuff = """
 </style>
 """
 
+st.set_page_config(
+    title = 'Project 3',
+    favicon = ':shark:'
+)
+
 st.markdown(fancy_page_stuff, unsafe_allow_html=True)
 
 current_time = start_time = dt.strftime(dt.now(),'%X') 
