@@ -56,6 +56,8 @@ fig2 = go.Figure()
 fig3 = go.Figure()
 
 if 'Precipitation' in option:
+    st.info('Precipitation shown below')
+
     fig1.add_trace(go.Scatter(
         x = pd.date_range("2019-10-03", "2022-11-03", freq='M'),
         y = avg_temp,
@@ -76,9 +78,7 @@ if 'Precipitation' in option:
         title = "Precipitation",
         xaxis_title = 'Date',
         yaxis_title = 'Temperature',
-        paper_bgcolor = '#d692fc',
-        showlegend = True,
-        legend= {'itemsizing': 'constant'}
+        paper_bgcolor = '#d692fc'
     )
 
 
