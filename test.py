@@ -34,8 +34,7 @@ fancy_page_stuff = """
 """
 
 st.set_page_config(
-    title = 'Project 3',
-    favicon = ':shark:'
+    title = 'Project 3'
 )
 
 st.markdown(fancy_page_stuff, unsafe_allow_html=True)
