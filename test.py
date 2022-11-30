@@ -29,7 +29,7 @@ fancy_page_stuff = """
 }
 
 [data-testid="stVerticalBlock"] {
-    background-color: #000000
+    background-color: #d692fc
 }
 </style>
 """
