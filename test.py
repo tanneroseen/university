@@ -23,6 +23,10 @@ fancy_page_stuff = """
 [data-testid="stAppViewContainer"] {
     background-color: #d692fc
 }
+
+[data-testid="stVerticalBlock"] {
+    background-color: #d692fc
+}
 </style>
 """
 
