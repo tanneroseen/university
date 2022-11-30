@@ -65,7 +65,7 @@ if 'Precipitation' in option:
             colorscale="Viridis",
             size=avg_precip,
             colorbar = dict(
-                title="Type"
+                title="Size"
             ),
         ),
     ))
@@ -74,7 +74,6 @@ if 'Precipitation' in option:
         title = "Precipitation",
         xaxis_title = 'Date',
         yaxis_title = 'Temperature',
-        legend_title = 'Size',
         paper_bgcolor = '#d692fc'
     )
 
