@@ -32,7 +32,7 @@ fancy_page_stuff = """
     background-color: #d692fc
 }
 
-[class="main-svg"] {
+[class="nsewdrag drag"] {
     background-color: #d692fc
 }
 </style>
