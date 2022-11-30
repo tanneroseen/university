@@ -7,8 +7,7 @@ from datetime import date
 st.set_page_config(
     page_title = 'Project 3',
     page_icon = ':shark:',
-    layout = 'wide',
-    menu_items = 'Data'
+    layout = 'wide'
 )
 
 
