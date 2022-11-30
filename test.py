@@ -31,6 +31,10 @@ fancy_page_stuff = """
 [data-testid="stVerticalBlock"] {
     background-color: #d692fc
 }
+
+[class="user-select-none svg-container"] {
+    background-color: #d692fc
+}
 </style>
 """
 
