@@ -65,7 +65,9 @@ if 'Precipitation' in option:
             colorscale="Viridis",
             size=avg_precip,
             colorbar = dict(
-                title="Size"
+                title="Temperature",
+                tickvals = [-10,0,15],
+                ticktext = ['Snow', 'Sleet', 'Rain']
             ),
         ),
     ))
