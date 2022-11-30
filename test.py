@@ -31,10 +31,6 @@ fancy_page_stuff = """
 [data-testid="stVerticalBlock"] {
     background-color: #d692fc
 }
-
-[class="nsewdrag drag"] {
-    background-color: #d692fc
-}
 </style>
 """
 
@@ -69,7 +65,8 @@ if 'Precipitation' in option:
         title = "Precipitation",
         xaxis_title = 'Date',
         yaxis_title = 'Temperature',
-        legend_title = 'Size'
+        legend_title = 'Size',
+        paper_bgcolor = '#d692fc'
     )
 
     st.plotly_chart(fig1)
