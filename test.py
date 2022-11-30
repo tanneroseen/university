@@ -32,7 +32,7 @@ fancy_page_stuff = """
     background-color: #d692fc
 }
 
-[class="user-select-none svg-container"] {
+[class="main-svg"] {
     background-color: #d692fc
 }
 </style>
