@@ -31,6 +31,7 @@ fancy_page_stuff = """
 }
 
 [data-testid="stVerticalBlock"] {
+    padding: 20px;
     background-color: #eef0af
 }
 </style>
