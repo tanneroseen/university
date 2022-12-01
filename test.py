@@ -140,18 +140,19 @@ if 'Temperature' in option:
         line = dict(color = '#00FF00')
         ))
     fig3.update_layout(
-            title = 'Weekly Temperature Extremes and their Difference',
-            xaxis_title = 'Date',
-            yaxis_title = 'Temperature (\u00B0C)',
-            paper_bgcolor = 'powderblue'
-            )
+        title = 'Weekly Temperature Extremes and their Difference',
+        xaxis_title = 'Date',
+        yaxis_title = 'Temperature (\u00B0C)',
+        plot_bgcolor = 'rgba(0,0,0,0.2)',
+        paper_bgcolor = 'rgba(0,0,0,0)'
+        )
 
-    st.plotly_chart(fig2)
+    st.plotly_chart(fig3)
 
 if 'Wind' in option:
-    fig3.add_trace(go.Scatter(
+    fig2.add_trace(go.Scatter(
         x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
         y=min_grouped_by_week),
     )
 
-    st.plotly_chart(fig3)
+    st.plotly_chart(fig2)
