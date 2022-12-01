@@ -27,11 +27,11 @@ min_temp = min_grouped_by_week = jasper_data.groupby(pd.Grouper(key = 'Date (Loc
 
 fancy_page_stuff = """
 <style>
-[data-testid="stAppViewContainer"]{
+[data-testid="stAppViewContainer"] > .main{{
     background-image: url('https://static.vecteezy.com/system/resources/thumbnails/007/515/187/original/timelapse-of-beautiful-blue-sky-in-pure-daylight-with-puffy-fluffy-white-clouds-background-amazing-flying-through-beautiful-thick-fluffy-clouds-nature-and-cloudscape-concept-free-video.jpg');
 
     background-attachment: local
-}
+}}
 
 [data-testid="stVerticalBlock"] {
     margin: auto;
