@@ -43,7 +43,7 @@ fancy_page_stuff = """
 }
 
 [data-testid="stHeader"] {
-    background-color: rgba(0,0,0,0)
+    background-color: #FAAC87
 }
 
 [data-testid="stToolbar"] {
