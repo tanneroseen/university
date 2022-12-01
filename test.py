@@ -47,7 +47,7 @@ fancy_page_stuff = """
     right: 2rem
 }
 
-[class="css-1offfwp e16nr0p34"] {
+[class="resize-triggers"] {
     padding: 20px
 }
 </style>
