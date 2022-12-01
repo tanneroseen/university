@@ -144,8 +144,14 @@ if 'Temperature' in option:
         xaxis_title = 'Date',
         yaxis_title = 'Temperature (\u00B0C)',
         plot_bgcolor = 'rgba(0,0,0,0.2)',
-        paper_bgcolor = 'rgba(0,0,0,0)'
-        )
+        paper_bgcolor = 'rgba(0,0,0,0)',
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        ))
 
     st.plotly_chart(fig3)
 
