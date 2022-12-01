@@ -50,14 +50,14 @@ fancy_page_stuff = """
 
 st.markdown(fancy_page_stuff, unsafe_allow_html=True)
 
-current_time = start_time = dt.strftime(dt.now(pytz.timezone('Canada/Mountain')),'%X') 
-current_date = date.today().strftime("%B %d, %Y")
+#current_time = start_time = dt.strftime(dt.now(pytz.timezone('Canada/Mountain')),'%X') 
+#current_date = date.today().strftime("%B %d, %Y")
+
+now = dt.now().strftime('%B %d, %Y %X')
 
 st.write(
     'The current date and time is: ',
-    current_date,
-    ' at ',
-    current_time
+    now
 )
 
 option = st.multiselect(
