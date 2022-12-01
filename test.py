@@ -29,6 +29,10 @@ fancy_page_stuff = """
 [data-testid="stAppViewContainer"] {
     background-image: url("https://cdn.getyourguide.com/img/location/5c9392236feff.jpeg/99.jpg");
 }
+
+[data-testid="stVerticalBlock"] {
+    background-color: #eef0af
+}
 </style>
 """
 
