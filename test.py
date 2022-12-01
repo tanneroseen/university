@@ -32,7 +32,7 @@ fancy_page_stuff = """
 
 [data-testid="stVerticalBlock"] {
     margin: auto;
-    width: 1000px;
+    width: 50%;
     padding: 20px;
     background-color: #eef0af
 }
