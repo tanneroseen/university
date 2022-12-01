@@ -40,6 +40,10 @@ fancy_page_stuff = """
 [data-testid="stHeader"] {
     background-color: rgba(0,0,0,0)
 }
+
+[data-testid="stToolbar"] {
+    right: 2rem
+}
 </style>
 """
 
