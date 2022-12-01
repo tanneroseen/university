@@ -30,7 +30,10 @@ fancy_page_stuff = """
     background-image: url("https://cdn.getyourguide.com/img/location/5c9392236feff.jpeg/99.jpg");
 
     filter: blur(8px)
+}
 
+[class="block-container css-12oz5g7 egzxvld2"] {
+    filter: blue(0px)
 }
 </style>
 """
