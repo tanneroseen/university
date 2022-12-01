@@ -29,7 +29,7 @@ fancy_page_stuff = """
 body {
     background-image: url("https://cdn.getyourguide.com/img/location/5c9392236feff.jpeg/99.jpg");
 
-    filter: blur(5px)
+    backdrop-filter: blur(5px)
 }
 </style>
 """
