@@ -53,7 +53,7 @@ st.markdown(fancy_page_stuff, unsafe_allow_html=True)
 #current_time = start_time = dt.strftime(dt.now(pytz.timezone('Canada/Mountain')),'%X') 
 #current_date = date.today().strftime("%B %d, %Y")
 
-now = dt.now().strftime('%B %d, %Y %X')
+now = dt.now(pytz.timezone('Canada/Mountain')).strftime('%B %d, %Y %X')
 
 st.write(
     'The current date and time is: ',
