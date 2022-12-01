@@ -28,6 +28,7 @@ fancy_page_stuff = """
 <style>
 [data-testid="stAppViewContainer"] {
     background-image: url("https://cdn.getyourguide.com/img/location/5c9392236feff.jpeg/99.jpg");
+    opacity: 0.2
 }
 
 [data-testid="stVerticalBlock"] {
