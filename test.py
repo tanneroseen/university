@@ -34,7 +34,7 @@ fancy_page_stuff = """
     margin: auto;
     width: 750px;
     padding: 20px;
-    background-color: #eef0af
+    background-color: #f6f7c8
 }
 </style>
 """
