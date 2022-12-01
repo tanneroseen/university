@@ -29,8 +29,7 @@ fancy_page_stuff = """
 [data-testid="stAppViewContainer"] {
     background-image: url("https://cdn.getyourguide.com/img/location/5c9392236feff.jpeg/99.jpg");
 
-    filter: blur(8px);
-    -webkit-filter: blue(8px)
+    filter: blur(8px)
 
 }
 </style>
