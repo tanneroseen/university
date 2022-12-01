@@ -29,7 +29,8 @@ fancy_page_stuff = """
 <style>
 [data-testid="stAppViewContainer"] > .main{{
     background-image: url('https://static.vecteezy.com/system/resources/thumbnails/007/515/187/original/timelapse-of-beautiful-blue-sky-in-pure-daylight-with-puffy-fluffy-white-clouds-background-amazing-flying-through-beautiful-thick-fluffy-clouds-nature-and-cloudscape-concept-free-video.jpg');
-
+    background-positio: top left;
+    background-repeat: no-repeat;
     background-attachment: local
 }}
 
@@ -73,8 +74,6 @@ fig2 = go.Figure()
 fig3 = go.Figure()
 
 if 'Precipitation' in option:
-    st.info('Precipitation shown below')
-
     fig1.add_trace(go.Scatter(
         x = pd.date_range("2019-10-03", "2022-11-03", freq='M'),
         y = avg_temp,
