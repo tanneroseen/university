@@ -70,11 +70,8 @@ option = st.multiselect(
     []
 )
 
-fig1 = go.Figure()
-fig2 = go.Figure()
-fig3 = go.Figure()
-
 if 'Precipitation' in option:
+    fig1 = go.Figure()
     fig1.add_trace(go.Scatter(
         x = pd.date_range("2019-10-03", "2022-11-03", freq='M'),
         y = avg_temp,
@@ -155,10 +152,23 @@ if 'Temperature' in option:
 
     st.plotly_chart(fig3)
 
+    with st.expander("Explanation"):
+        st.write(
+            'The above chart displays date vs temperature throughout each month from October 2019 to September 2022.',
+            'The size of each bubble represents the ammount of precipitation in the month and the colour corresponds to the type of precipitation whether that is rain or snow.'
+        )
+
 if 'Wind' in option:
+    fig2 = go.Figure()
     fig2.add_trace(go.Scatter(
         x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
         y=min_grouped_by_week),
     )
 
     st.plotly_chart(fig2)
+
+    with st.expander("Explanation"):
+        st.write(
+            'The above chart displays date vs temperature throughout each month from October 2019 to September 2022.',
+            'The size of each bubble represents the ammount of precipitation in the month and the colour corresponds to the type of precipitation whether that is rain or snow.'
+        )
