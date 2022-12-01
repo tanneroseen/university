@@ -29,7 +29,7 @@ fancy_page_stuff = """
 <style>
 [data-testid="stAppViewContainer"] > .main{
     background-image: url('https://static.vecteezy.com/system/resources/thumbnails/007/515/187/original/timelapse-of-beautiful-blue-sky-in-pure-daylight-with-puffy-fluffy-white-clouds-background-amazing-flying-through-beautiful-thick-fluffy-clouds-nature-and-cloudscape-concept-free-video.jpg');
-    background-size: 100%;
+    background-size: 200%;
     background-positio: top left;
     background-repeat: no-repeat;
     background-attachment: local
