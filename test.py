@@ -23,7 +23,10 @@ jasper_data = jasper_data[jasper_data['Wind Dir. 10 m Avg. Record Completeness (
 
 avg_precip = jasper_data.groupby(pd.Grouper(key= 'Date (Local Standard Time)', freq='M'))['Precip. (mm)'].sum() #Sums the percipitation in each month
 avg_temp = jasper_data.groupby(pd.Grouper(key= 'Date (Local Standard Time)', freq='M'))['Air Temp. Avg. (C)'].mean() #Does the avg monthly air temp from the daily averages
-min_temp = min_grouped_by_week = jasper_data.groupby(pd.Grouper(key = 'Date (Local Standard Time)', freq = 'M'))['Air Temp. Min. (C)'].min()
+min_grouped_by_week = jasper_data.groupby(pd.Grouper(key = 'Date (Local Standard Time)', freq = 'M'))['Air Temp. Min. (C)'].min()
+max_grouped_by_week = jasper_data.groupby(pd.Grouper(key = 'Date (Local Standard Time)', freq = 'W-SUN'))['Air Temp. Max. (C)'].max()
+date_range = min_grouped_by_week.keys() #grabs each date (start of each week grouped by) that is used by all graphs as common x-values
+differce_in_max_and_min = max_grouped_by_week - min_grouped_by_week
 
 fancy_page_stuff = """
 <style>
@@ -46,10 +49,6 @@ fancy_page_stuff = """
 [data-testid="stToolbar"] {
     right: 2rem
 }
-
-[class="resize-triggers"] {
-    padding: 20px
-}
 </style>
 """
 
@@ -67,7 +66,7 @@ st.write(
 
 option = st.multiselect(
     'What graphs would you like to display?',
-    ['Precipitation', 'Average Temp', 'Min Temp'],
+    ['Precipitation', 'Temperature', 'Wind'],
     []
 )
 
@@ -110,18 +109,49 @@ if 'Precipitation' in option:
             'The size of each bubble represents the ammount of precipitation in the month and the colour corresponds to the type of precipitation whether that is rain or snow.'
         )
 
-if 'Average Temp' in option:   
-    fig2.add_trace(go.Scatter(
-        x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
-        y=avg_temp),
-    )
+if 'Temperature' in option:   
+    fig3 = go.Figure()
+    fig3.add_trace(go.Scatter(
+        x = date_range,
+        y = [0 for i in range(len(date_range))],
+        name = '0\u00B0 C',
+        opacity = 0.5,
+        line = dict(color = 'black')
+        ))
+    fig3.add_trace(go.Scatter(
+        x = date_range,
+        y = min_grouped_by_week,
+        name = 'Minimum Temperature',
+        mode = "lines+markers",
+        line = dict(color = '#0000FF')
+        ))
+    fig3.add_trace(go.Scatter(
+        x = date_range,
+        y = max_grouped_by_week,
+        name = 'Maximum Temperature',
+        mode = 'lines+markers',
+        line = dict(color = '#FF0000')
+        ))
+    fig3.add_trace(go.Scatter(
+        x = date_range,
+        y = differce_in_max_and_min,
+        name = 'Difference in Min and Max Temperatures',
+        mode = 'lines+markers',
+        line = dict(color = '#00FF00')
+        ))
+    fig3.update_layout(
+            title = 'Weekly Temperature Extremes and their Difference',
+            xaxis_title = 'Date',
+            yaxis_title = 'Temperature (\u00B0C)',
+            paper_bgcolor = 'powderblue'
+            )
 
     st.plotly_chart(fig2)
 
-if 'Min Temp' in option:
+if 'Wind' in option:
     fig3.add_trace(go.Scatter(
         x=pd.date_range("2019-10-03", "2022-11-03", freq='M'),
-        y=min_temp),
+        y=min_grouped_by_week),
     )
 
     st.plotly_chart(fig3)
