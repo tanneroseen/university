@@ -96,7 +96,7 @@ if 'Precipitation' in option:
         xaxis_title = 'Date',
         yaxis_title = 'Temperature',
         #paper_bgcolor = '#d692fc',
-        plot_bgcolor = 'rgba(0,0,0,0.1)',
+        plot_bgcolor = 'rgba(255,255,255,0.1)',
         paper_bgcolor = 'rgba(0,0,0,0)'
     )
 
