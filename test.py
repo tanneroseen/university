@@ -30,10 +30,6 @@ fancy_page_stuff = """
     background-image: url("https://cdn.getyourguide.com/img/location/5c9392236feff.jpeg/99.jpg")
 
 }
-
-[data-testid="stVerticalBlock"] {
-    background-color: #d692fc
-}
 </style>
 """
 
