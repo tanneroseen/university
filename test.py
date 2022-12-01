@@ -36,6 +36,10 @@ fancy_page_stuff = """
     padding: 20px;
     background-color: rgba(78, 212, 245,0.5)
 }
+
+[data-testid="stHeader"] {
+    opacity: 0
+}
 </style>
 """
 
