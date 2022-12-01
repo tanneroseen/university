@@ -39,11 +39,11 @@ fancy_page_stuff = """
     margin: auto;
     width: 750px;
     padding: 20px;
-    background-color: #FAAC87
+    background-color: rgba(255,255,255,0.6)
 }
 
 [data-testid="stHeader"] {
-    background-color: rgba(0,0,0,1)
+    background-color: rgba(0,0,0,0)
 }
 
 [data-testid="stToolbar"] {
