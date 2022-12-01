@@ -47,7 +47,7 @@ fancy_page_stuff = """
     right: 2rem
 }
 
-[data-testid="stMarkdownContainer"] {
+[class="css-1offfwp e16nr0p34"] {
     padding: 20px
 }
 </style>
